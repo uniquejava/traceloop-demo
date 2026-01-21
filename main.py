@@ -1,5 +1,5 @@
 def main():
-    print("Hello from traceloop-docs!")
+    print("Hello from traceloop-demo!")
 
 
 if __name__ == "__main__":
