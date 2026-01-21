@@ -1,5 +1,7 @@
 ## Overview
-Simple LangChain + Traceloop demos for learning and experimentation.
+Simple LangChain + Traceloop demos for learning and experimentation, now oriented around running the notebooks in VS Code.
+
+![create agent trace](./doc/screenshot.png)
 
 ## Getting Started
 1) Install Python 3.12+.  
@@ -7,12 +9,6 @@ Simple LangChain + Traceloop demos for learning and experimentation.
 3) Set env vars in `.env`:  
    - `OPENAI_MODEL` (e.g., `ollama:qwen2.5:3b`)  
    - Optional: `TRACELOOP_API_KEY` if you enable telemetry
+4) Jupyter kernels: you already added `ipykernel`—select the `uv` environment kernel in VS Code.
 
-## Run Examples
-- `uv run python main.py` — sanity check.
-- `uv run python hello/01hello.py` — basic chat.
-- `uv run python hello/02tool.py` — tool call demo with Traceloop instrumentation.
 
-## Notes
-- Keep `.env` out of version control; add new keys to `.env.example` if you create one.
-- Dependencies live in `pyproject.toml` and `uv.lock`; commit both when they change.

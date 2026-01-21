@@ -2,19 +2,20 @@
 
 ## Project Structure & Module Organization
 - `main.py`: quick entrypoint for sanity checks.
-- `hello/01hello.py`: minimal LangChain chat example; requires `OPENAI_MODEL`.
-- `hello/02tool.py`: tool-calling demo instrumented with Traceloop (enable or adjust `Traceloop.init` as needed).
+- `hello/01models.ipynb`: minimal LangChain chat example; requires `OPENAI_MODEL`.
+- `hello/02model_with_tools.ipynb`: tool-calling demo instrumented with Traceloop (adjust `Traceloop.init` as needed).
+- `hello/03create_agent.ipynb`: agent-style workflow example.
 - `pyproject.toml` and `uv.lock`: source of truth for dependencies; add new tests under `tests/` when coverage is introduced.
 
 ## Setup & Environment
 - Target Python 3.12; install dependencies with `uv sync`.
-- Use a local `.env` for secrets and model settings. Required: `OPENAI_MODEL` (e.g., `ollama:qwen2.5:3b`). For telemetry, set `TRACELOOP_API_KEY` and tune `Traceloop.init` in scripts.
+- Use a local `.env` for secrets and model settings. Required: `OPENAI_MODEL` (e.g., `ollama:qwen2.5:3b`). For telemetry, set `TRACELOOP_API_KEY` and tune `Traceloop.init` in notebooks.
+- VS Code notebooks: select the `uv` kernel (with `ipykernel`).
 - Do not commit `.env`; if you add new variables, provide a safe `.env.example`.
 
 ## Build, Test, and Development Commands
 - `uv run python main.py` – repository smoke check.
-- `uv run python hello/01hello.py` – run the basic chat flow.
-- `uv run python hello/02tool.py` – exercise tool calls and Traceloop instrumentation.
+- Open notebooks via VS Code/Jupyter and run cells directly (no CLI needed for the examples).
 - `uv add <package>` then `uv sync` – add dependencies and refresh the lockfile (commit both).
 
 ## Coding Style & Naming Conventions
